@@ -1,4 +1,5 @@
 # Demisyn
+[![Build Status](https://travis-ci.org/danielpclark/demisyn.svg)](https://travis-ci.org/danielpclark/demisyn)
 
 With demisyn you'll never need to dot your methods again. *wink* *wink*
 
