@@ -9,6 +9,7 @@ describe "Demisyn" do
 
   it "runs strings" do
     _(~"'asdf' reverse split('s') join capitalize").must_equal "Fda"
+    _(~"'asdf'    reverse    split('s')    join    capitalize").must_equal "Fda"
   end
 
   it "runs arrays of strings" do
