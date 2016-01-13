@@ -21,30 +21,42 @@ Or install it yourself as:
 
 ## Usage
 
-Anywhere you want to use this you must first include this in the scope of its use.
+Anywhere you want to use this (within Objects) you must first include this
+in the scope of its use.
 
 ```ruby
 using Demisyn
 ```
 
 Then you can evaluate strings and arrays of strings as if they were consecutive methods.
-Returns `nil` if it fails.
 
-Examples:
+###Examples
 
 ```ruby
 ~"'asdf' reverse split('s') join capitalize"
 # => "Fda"
 ~%w['asdf' reverse split('s') join capitalize]
 # => "Fda"
+
 ~"'asdf' pikachu split('s') join capitalize"
-# => nil
+#NoMethodError: undefined method
 ~%w['asdf' pikachu split('s') join capitalize]
+#NoMethodError: undefined method
+```
+Note to execute Demisyn in this fashion you must use the tilde before an Array or String.
+
+####Ruby 2.3.0
+
+Since Ruby 2.3.0 has added the safe navigation operator I've made that available for your
+method chain.  Instead of using tilde before a String or Array use the minus symbol.
+
+```ruby
+-"'asdf' reverse split('s') join capitalize"
+# => "Fda"
+
+-"'asdf'[7] reverse split('s') join capitalize"
 # => nil
 ```
-
-This is not ideal if nil is a valid value you expected returned.  Think of it as similar
-to the safe navigation usage.
 
 ## Contributing
 

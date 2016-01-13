@@ -9,27 +9,27 @@ module Demisyn
   end
 
   refine String do
+    def ~()
+      eval gsub(/ /, ".")
+    end 
+
     case Demisyn.send :lonely_operator?
     when true
-      def ~()
+      def -@
         eval gsub(/ /, "&.")
       end
-    when false
-      def ~()
-        eval gsub(/ /, ".") rescue nil
-      end
-    end 
+    end
   end
 
   refine Array do
+    def ~()
+      eval join(".") 
+    end
+
     case Demisyn.send :lonely_operator?
     when true
-      def ~()
+      def -@
         eval join("&.")
-      end
-    when false
-      def ~()
-        eval join(".") rescue nil
       end
     end
   end
