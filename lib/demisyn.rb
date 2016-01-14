@@ -10,13 +10,13 @@ module Demisyn
 
   refine String do
     def ~()
-      eval squeeze.gsub(/ /, ".")
+      eval squeeze(' ').gsub(/ /, ".")
     end 
 
     case Demisyn.send :lonely_operator?
     when true
       def -@
-        eval squeeze.gsub(/ /, "&.")
+        eval squeeze(' ').gsub(/ /, "&.")
       end
     end
   end
