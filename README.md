@@ -30,7 +30,7 @@ using Demisyn
 
 Then you can evaluate strings and arrays of strings as if they were consecutive methods.
 
-###Examples
+### Examples
 
 ```ruby
 ~"'asdf' reverse split('s') join capitalize"
@@ -45,7 +45,7 @@ Then you can evaluate strings and arrays of strings as if they were consecutive 
 ```
 Note to execute Demisyn in this fashion you must use the tilde before an Array or String.
 
-####Ruby 2.3.0
+#### Ruby 2.3.0
 
 Since Ruby 2.3.0 has added the safe navigation operator I've made that available for your
 method chain.  Instead of using tilde before a String or Array use the minus symbol.
